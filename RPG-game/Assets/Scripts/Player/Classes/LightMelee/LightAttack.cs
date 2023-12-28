@@ -11,7 +11,7 @@ public class LightAttack : MonoBehaviour
     public float dashDamage = 1;
     public float dashCoolDown = 3;
     [Space]
-    public float damage = 2;
+    public float damage = 1;
     public float attackRate = 2;
     float currentAttackRate;
     public bool canAttack = true;
