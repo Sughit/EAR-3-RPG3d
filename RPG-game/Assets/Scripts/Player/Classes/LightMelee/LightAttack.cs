@@ -5,13 +5,11 @@ using UnityEngine;
 public class LightAttack : MonoBehaviour
 {
     [Header("Dodge Stuff")]
-    public bool canDodge = true;
-    public float dodgeDistance = 2f;
-    public bool canAttackDodge;
-    public float dodgeDamage = 1;
-    public float dodgeTime = .5f;
-    public float dodgeCoolDown = 3;
-    public float dodgeSpeed = 5;
+    public bool canDash = true;
+    public float dashForce = 2f;
+    public bool canAttackDash;
+    public float dashDamage = 1;
+    public float dashCoolDown = 3;
     [Space]
     public float damage = 2;
     public float attackRate = 2;
@@ -27,10 +25,10 @@ public class LightAttack : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.Space) && canDodge)
+        if(Input.GetKey(KeyCode.Space) && canDash)
         {
-            Debug.Log("Dodge");
-            StartCoroutine(Dodge());
+            Debug.Log("Dash");
+            StartCoroutine(Dash());
         }
 
         if(Input.GetMouseButtonDown(0) && canAttack)
@@ -52,27 +50,14 @@ public class LightAttack : MonoBehaviour
         Debug.Log("Attack");
     }
 
-    IEnumerator Dodge()
+    IEnumerator Dash()
     {
-        canDodge = false;
+        canDash = false;
         canAttack = false;
-        anim.SetBool("dodge", true);
-        
-        float startTime = Time.time;
-        Vector3 dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        while(Time.time < startTime + dodgeTime)
-        {
-            transform.Translate(dir * dodgeTime * dodgeSpeed);
-
-            yield return null;
-        }
-
-        yield return new WaitForSeconds(dodgeTime);
-        anim.SetBool("dodge", false);
-        if(canAttackDodge) Debug.Log("Attack dodge");
+        GetComponent<Rigidbody>().AddForce(transform.forward * dashForce, ForceMode.Impulse);
         yield return null;
         canAttack = true;
-        yield return new WaitForSeconds(dodgeCoolDown);
-        canDodge = true;
+        yield return new WaitForSeconds(dashCoolDown);
+        canDash = true;
     }
 }

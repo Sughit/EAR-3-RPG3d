@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class SelectClass : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class SelectClass : MonoBehaviour
     public static string _class;
     public GameObject lightMelee, heavyMelee, lightRange, heavyRange;
     public Transform spawnPoint;
+
+    public CinemachineVirtualCamera vcam;
+    GameObject _player;
 
     void Start()
     {
@@ -23,27 +27,31 @@ public class SelectClass : MonoBehaviour
     {
         _class="l_melee";
         classMenu.SetActive(false);
-        Instantiate(lightMelee, spawnPoint.position, Quaternion.identity);
+        _player = Instantiate(lightMelee, spawnPoint.position, Quaternion.identity);
+        vcam.Follow = _player.transform;
     }
 
     public void ChooseHeavyMelee()
     {
         _class="h_melee";
         classMenu.SetActive(false);
-        Instantiate(heavyMelee, spawnPoint.position, Quaternion.identity);
+        _player = Instantiate(heavyMelee, spawnPoint.position, Quaternion.identity);
+        vcam.Follow = _player.transform;
     }
 
     public void ChooseLightRange()
     {
         _class="l_range";
         classMenu.SetActive(false);
-        Instantiate(lightRange, spawnPoint.position, Quaternion.identity);
+        _player = Instantiate(lightRange, spawnPoint.position, Quaternion.identity);
+        vcam.Follow = _player.transform;
     }
 
     public void ChooseHeavyRange()
     {
         _class="h_range";
         classMenu.SetActive(false);
-        Instantiate(heavyRange, spawnPoint.position, Quaternion.identity);
+        _player = Instantiate(heavyRange, spawnPoint.position, Quaternion.identity);
+        vcam.Follow = _player.transform;
     }
 }
