@@ -12,6 +12,8 @@ public class ShakeCamera : MonoBehaviour
     float timer;
     CinemachineBasicMultiChannelPerlin _cbmcp;
 
+    public static bool shake;
+
     void Start()
     {
         StopShake();
@@ -33,18 +35,19 @@ public class ShakeCamera : MonoBehaviour
         timer = 0;
     }
 
-    public void CameraShake()
+    void Update()
+    {
+        if(shake)
+        {
+            StartCoroutine(ShakeCameraCoroutine());   
+        }
+    }
+
+    IEnumerator ShakeCameraCoroutine()
     {
         StartShake();
-
-        while(timer > 0)
-        {
-            timer -= Time.deltaTime;
-
-            if(timer <= 0)
-            {
-                StopShake();
-            }
-        }
+        yield return new WaitForSeconds(shakeTime);
+        shake=false;
+        StopShake();
     }
 }
