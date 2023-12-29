@@ -8,7 +8,6 @@ public class LightRange : MonoBehaviour
     public float attackRate = 3;
     [SerializeField]
     float currentAttackRate;
-    public float attackRange = 5;
     public bool canAttack=true;
     bool isAttacking;
     [Header("Projectile")]

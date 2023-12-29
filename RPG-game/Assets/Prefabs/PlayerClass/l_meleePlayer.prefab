@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 809266426084111697}
   m_Layer: 8
   m_Name: l_meleePlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
