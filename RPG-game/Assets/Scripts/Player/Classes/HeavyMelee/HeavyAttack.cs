@@ -14,6 +14,7 @@ public class HeavyAttack : MonoBehaviour
     public float attackRate = 1;
     float currentAttackRate;
     public bool canAttack = true;
+    bool isAttacking;
 
     public static bool heavy;
     public GameObject heavyAttackParticle;
@@ -32,14 +33,16 @@ public class HeavyAttack : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0) && canAttack)
         {
-            if(currentAttackRate <= 0)
+            Attack();
+        }
+
+        if(isAttacking)
+        {
+            currentAttackRate += Time.deltaTime;
+            if(currentAttackRate >= attackRate)
             {
-                Attack();
-                currentAttackRate = attackRate;
-            }
-            else
-            {
-                currentAttackRate -= Time.deltaTime;
+                currentAttackRate = 0;
+                isAttacking=false;
             }
         }
 
@@ -95,7 +98,8 @@ public class HeavyAttack : MonoBehaviour
 
     void Attack()
     {
-        Debug.Log("Attack");
+        isAttacking=true;
+        if(currentAttackRate == 0) Debug.Log("Attack");
     }
 
     void Heavy()

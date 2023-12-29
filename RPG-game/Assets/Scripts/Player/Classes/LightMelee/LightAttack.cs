@@ -13,8 +13,10 @@ public class LightAttack : MonoBehaviour
     [Space]
     public float damage = 1;
     public float attackRate = 2;
+    [SerializeField]
     float currentAttackRate;
     public bool canAttack = true;
+    bool isAttacking;
 
     Animator anim;
 
@@ -33,21 +35,24 @@ public class LightAttack : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0) && canAttack)
         {
-            if(currentAttackRate <= 0)
+            Attack();
+        }
+
+        if(isAttacking)
+        {
+            currentAttackRate += Time.deltaTime;
+            if(currentAttackRate >= attackRate)
             {
-                Attack();
-                currentAttackRate = attackRate;
-            }
-            else
-            {
-                currentAttackRate -= Time.deltaTime;
+                currentAttackRate = 0;
+                isAttacking=false;
             }
         }
     }
 
     void Attack()
     {
-        Debug.Log("Attack");
+        isAttacking=true;
+        if(currentAttackRate == 0) Debug.Log("Attack");
     }
 
     IEnumerator Dash()

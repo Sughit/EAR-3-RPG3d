@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8883585576695015323}
   - component: {fileID: 8883585576695015326}
   - component: {fileID: 8883585576695015325}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 5978145989388328832}
   - component: {fileID: 8883585577036370860}
   - component: {fileID: 809266426084111697}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: l_meleePlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,4 +204,5 @@ MonoBehaviour:
   dashCoolDown: 3
   damage: 2
   attackRate: 2
+  currentAttackRate: 0
   canAttack: 1

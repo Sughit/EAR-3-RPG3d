@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7705362868114514000}
   - component: {fileID: 6965423964112868924}
   - component: {fileID: 9157757051866676694}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: h_rangePlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 3531060549033601588}
   - component: {fileID: 8055843543663467380}
   - component: {fileID: 4998621571866485696}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}

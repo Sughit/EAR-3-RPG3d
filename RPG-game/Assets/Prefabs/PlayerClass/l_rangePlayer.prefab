@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8095103626503749763}
   - component: {fileID: 8636234949763392357}
   - component: {fileID: 6143003203201821038}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,9 +106,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 54645867039594300}
-  - component: {fileID: 2651603345515928049}
   - component: {fileID: 3982319117661799552}
-  m_Layer: 0
+  - component: {fileID: 2651603345515928049}
+  - component: {fileID: 4636203408377897535}
+  m_Layer: 8
   m_Name: l_rangePlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,21 +132,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2651603345515928049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6720359123898904207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c58dd04dd18e2a34391992a29eae5081, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 3982319117661799552}
-  speed: 5
-  rotSpeed: 360
 --- !u!54 &3982319117661799552
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -162,3 +148,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &2651603345515928049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6720359123898904207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58dd04dd18e2a34391992a29eae5081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 3982319117661799552}
+  speed: 5
+  rotSpeed: 360
+--- !u!114 &4636203408377897535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6720359123898904207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1fff9759a9216342a5386e268b89efd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  attackRate: 1
+  currentAttackRate: 0
+  attackRange: 5
+  canAttack: 1
+  spellProjectile: {fileID: 689122574674940342, guid: a73ce4c3a3374a7498e909999775b696, type: 3}
