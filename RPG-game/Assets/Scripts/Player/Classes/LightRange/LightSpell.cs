@@ -4,21 +4,15 @@ using UnityEngine;
 
 public class LightSpell : MonoBehaviour
 {
-    public float speed = 5;
-    Vector3 aim;
-    Rigidbody rb;
+    public float timeToDestroy = 5;
 
     void Awake()
     {
-        Camera cam = Camera.main;
-        rb=GetComponent<Rigidbody>();
- 
-        aim = cam.ScreenToWorldPoint(Input.mousePosition);
-        transform.LookAt(aim);
+        Destroy(this.gameObject, timeToDestroy);
     }
 
-    void Update()
+    void OnCollisionEnter(Collision other)
     {
-        rb.AddRelativeForce(-transform.forward * speed);
+        Destroy(this.gameObject);
     }
 }

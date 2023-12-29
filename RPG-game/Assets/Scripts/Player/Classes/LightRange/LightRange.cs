@@ -10,8 +10,11 @@ public class LightRange : MonoBehaviour
     float currentAttackRate;
     public float attackRange = 5;
     public bool canAttack=true;
-    public GameObject spellProjectile;
     bool isAttacking;
+    [Header("Projectile")]
+    public GameObject spellProjectile;
+    public Transform spawnPoint;
+    public float spellSpeed = 10;
 
     void Update()
     {
@@ -37,7 +40,9 @@ public class LightRange : MonoBehaviour
         if(currentAttackRate == 0)
         {
             Debug.Log("Attack");
-            Instantiate(spellProjectile, transform.position, Quaternion.identity);
+            ShakeCamera.shake = true;
+            var spell = Instantiate(spellProjectile, spawnPoint.position, spawnPoint.rotation);
+            spell.GetComponent<Rigidbody>().velocity = spawnPoint.forward * spellSpeed;
         }
     }
 }
