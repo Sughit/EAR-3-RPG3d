@@ -19,6 +19,11 @@ public class Movement : MonoBehaviour
     {
         GetInput();
         Look();
+
+        if(Input.GetKey(KeyCode.T))
+        {
+            ExpManager.instance.AddExp(50);
+        }
     }
 
     private void FixedUpdate() 

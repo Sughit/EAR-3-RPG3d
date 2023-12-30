@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public float maxHealth = 10;
     public float currentHealth;
+    public int expAmmount = 50;
 
     void Awake()
     {
@@ -26,6 +27,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
+        ExpManager.instance.AddExp(expAmmount);
         Destroy(this.gameObject);
     }
 }
