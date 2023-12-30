@@ -78,6 +78,7 @@ public class EnemyAI : MonoBehaviour
         {
             attacked = true;
             Invoke(nameof(ResetAttack), attackRate);
+            player.GetComponent<PlayerHealth>().TakeDamage(damage);
         }
     }
 

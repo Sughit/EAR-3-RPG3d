@@ -12,13 +12,13 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    void Heal(float healAmmount)
+    public void Heal(float healAmmount)
     {
         if(currentHealth + healAmmount > maxHealth) currentHealth += healAmmount;
         else currentHealth = maxHealth;
     }
 
-    void TakeDamage(float damageAmmount)
+    public void TakeDamage(float damageAmmount)
     {
         currentHealth -= damageAmmount;
 

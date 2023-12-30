@@ -17,6 +17,8 @@ public class LightRange : MonoBehaviour
 
     void Update()
     {
+        if(GameObject.Find("GameManager").GetComponent<InGameMenu>().inGameMenuGO.activeSelf) canAttack=false;
+        else canAttack=true;
         if(Input.GetMouseButtonDown(0) && canAttack)
         {
             Attack();

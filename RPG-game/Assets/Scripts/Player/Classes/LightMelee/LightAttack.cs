@@ -27,6 +27,8 @@ public class LightAttack : MonoBehaviour
 
     void Update()
     {
+        if(GameObject.Find("GameManager").GetComponent<InGameMenu>().inGameMenuGO.activeSelf) canAttack=false;
+        else canAttack=true;
         if(Input.GetKey(KeyCode.Space) && canDash)
         {
             Debug.Log("Dash");
