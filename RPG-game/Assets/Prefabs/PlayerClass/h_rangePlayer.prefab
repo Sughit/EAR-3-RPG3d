@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 9157757051866676694}
   - component: {fileID: 6965423964112868924}
   - component: {fileID: 5600896593424659450}
+  - component: {fileID: 5153101691862969663}
   m_Layer: 8
   m_Name: h_rangePlayer
   m_TagString: Player
@@ -117,6 +118,20 @@ MonoBehaviour:
   spellProjectile: {fileID: 1077837414381089672, guid: ee3eccac257c59c4d81d0b4771e20756, type: 3}
   spawnPoint: {fileID: 1281645725370507238}
   spellSpeed: 10
+--- !u!114 &5153101691862969663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2966842813167809075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57875e8ce45e8a14086e29c4109bf0c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  currentHealth: 0
 --- !u!1 &9082959680110088063
 GameObject:
   m_ObjectHideFlags: 0

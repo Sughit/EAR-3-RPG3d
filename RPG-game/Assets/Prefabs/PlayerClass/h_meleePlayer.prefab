@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4460985980657068755}
   - component: {fileID: 4105430004117400957}
   - component: {fileID: 558016992131686189}
+  - component: {fileID: -43114426061938056}
   m_Layer: 8
   m_Name: h_meleePlayer
   m_TagString: Player
@@ -85,6 +86,20 @@ MonoBehaviour:
   attackRate: 1
   canAttack: 1
   heavyAttackParticle: {fileID: 2046916192691440078}
+--- !u!114 &-43114426061938056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640572268719216901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57875e8ce45e8a14086e29c4109bf0c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 30
+  currentHealth: 0
 --- !u!1 &2046916192691440078
 GameObject:
   m_ObjectHideFlags: 0
