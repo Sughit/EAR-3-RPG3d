@@ -135,7 +135,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &8678469175648979363
 BoxCollider:
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canDash: 1
-  dashForce: 20
+  dashForce: 15
   canAttackDash: 0
   dashDamage: 1
   dashCoolDown: 3
