@@ -6,6 +6,7 @@ public class HeavySpell : MonoBehaviour
 {
     public HeavyRange parent;
     public float range=1;
+    public GameObject explosionParticle;
 
     void OnCollisionEnter(Collision other)
     {
@@ -16,6 +17,7 @@ public class HeavySpell : MonoBehaviour
             {
                 if(col.gameObject.GetComponent<EnemyHealth>()) col.gameObject.GetComponent<EnemyHealth>().TakeDamage(parent.damage);
             }
+            Instantiate(explosionParticle, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

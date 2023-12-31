@@ -260,4 +260,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5600896593424659450, guid: 970554ac279001f45b56ca5b4443c2a7, type: 3}
-  range: 1
+  range: 1.5
+  explosionParticle: {fileID: 1578861797424041946, guid: acff49291a8079d4f97e723ce29f070f, type: 3}

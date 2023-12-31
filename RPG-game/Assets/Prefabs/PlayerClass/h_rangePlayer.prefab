@@ -117,7 +117,7 @@ MonoBehaviour:
   canAttack: 1
   spellProjectile: {fileID: 1077837414381089672, guid: ee3eccac257c59c4d81d0b4771e20756, type: 3}
   spawnPoint: {fileID: 1281645725370507238}
-  spellSpeed: 10
+  spellSpeed: 7
 --- !u!114 &5153101691862969663
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -131,6 +131,7 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   expAmmount: 50
+  mRenderer: {fileID: 9191579066700964097}
 --- !u!1 &5963858439416703575
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +292,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8e4ecf095ec049549ad8764dc2873583, type: 2}
+  - {fileID: 2100000, guid: 485ff2ecb9e536b429540817435fcbc3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
