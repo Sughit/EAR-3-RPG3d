@@ -128,7 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3aeba0dd461f1745bd8f44fd5772ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  timeToDestroy: 5
+  parent: {fileID: 4636203408377897535, guid: 5eaea1a48e2a04b4d9023b163b1b077c, type: 3}
 --- !u!1 &4440019991928499462
 GameObject:
   m_ObjectHideFlags: 0

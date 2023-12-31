@@ -5,6 +5,7 @@ using UnityEngine;
 public class LightSpell : MonoBehaviour
 {
     public float timeToDestroy = 5;
+    public LightRange parent;
 
     void Awake()
     {
@@ -13,6 +14,7 @@ public class LightSpell : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
+        if(other.gameObject.GetComponent<EnemyHealth>()) other.gameObject.GetComponent<EnemyHealth>().TakeDamage(parent.damage);
         Destroy(this.gameObject);
     }
 }

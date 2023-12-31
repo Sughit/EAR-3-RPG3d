@@ -13,13 +13,13 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    void TakeDamage(float damageAmmount)
+    public void TakeDamage(float damageAmmount)
     {
         currentHealth -= damageAmmount;
         if(currentHealth <= 0) Die();
     }
 
-    void Heal(float healAmmount)
+    public void Heal(float healAmmount)
     {
         if(currentHealth + healAmmount >= maxHealth) currentHealth = maxHealth;
         else currentHealth += healAmmount;

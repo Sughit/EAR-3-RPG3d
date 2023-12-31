@@ -13,6 +13,8 @@ public class LightAttack : MonoBehaviour
     [Space]
     public float damage = 1;
     public float attackRate = 2;
+    public float attackRange = 1;
+    public Transform attackPoint;
     [SerializeField]
     float currentAttackRate;
     public bool canAttack = true;
@@ -54,7 +56,14 @@ public class LightAttack : MonoBehaviour
     void Attack()
     {
         isAttacking=true;
-        if(currentAttackRate == 0) Debug.Log("Attack");
+        if(currentAttackRate == 0) 
+        {
+            Debug.Log("Attack");
+            foreach(Collider other in Physics.OverlapSphere(attackPoint.position, attackRange))
+            {
+                if(other.gameObject.GetComponent<EnemyHealth>()) other.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+            }
+        }
     }
 
     IEnumerator Dash()
@@ -66,5 +75,11 @@ public class LightAttack : MonoBehaviour
         canAttack = true;
         yield return new WaitForSeconds(dashCoolDown);
         canDash = true;
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }

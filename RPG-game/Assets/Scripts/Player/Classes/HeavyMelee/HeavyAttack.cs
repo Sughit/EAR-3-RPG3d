@@ -5,17 +5,21 @@ using UnityEngine;
 public class HeavyAttack : MonoBehaviour
 {
     [Header("Heavy Attack")]
-    public float maxDamage = 3;
+    public float heavyDamage = 3;
     public float timeToHeavyAttack = 3;
+    public Transform heavyAttackPoint;
+    public float heavyAttackRange = 2;
     float startTimer;
     float endTimer;
-    [Space]
+    [Header("Normal Attack")]
     public float damage = 2;
     public float attackRate = 1;
     float currentAttackRate;
     public bool canAttack = true;
+    public Transform attackPoint;
+    public float attackRange=.7f;
     bool isAttacking;
-
+    [Header("Particles for Heavy Attack")]
     public static bool heavy;
     public GameObject heavyAttackParticle;
     ParticleSystem heavyAttackPs;
@@ -101,7 +105,14 @@ public class HeavyAttack : MonoBehaviour
     void Attack()
     {
         isAttacking=true;
-        if(currentAttackRate == 0) Debug.Log("Attack");
+        if(currentAttackRate == 0) 
+        {
+            Debug.Log("Attack");
+            foreach(Collider other in Physics.OverlapSphere(attackPoint.position, attackRange))
+            {
+                if(other.gameObject.GetComponent<EnemyHealth>()) other.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+            }
+        }
     }
 
     void Heavy()
@@ -115,6 +126,11 @@ public class HeavyAttack : MonoBehaviour
         var emission = heavyAttackPs.emission;
         emission.rateOverTime = 1;
         heavyAttackParticle.SetActive(false);
+        foreach(Collider other in Physics.OverlapSphere(heavyAttackPoint.position, heavyAttackRange))
+        {
+            if(other.gameObject.GetComponent<EnemyHealth>()) other.gameObject.GetComponent<EnemyHealth>().TakeDamage(heavyDamage);
+        }
+
     }
 
     IEnumerator ParticleColorSet()
@@ -125,5 +141,13 @@ public class HeavyAttack : MonoBehaviour
             var main = heavyAttackPs.main;
             main.startColor = new Color(135, 0, 115, 255);
         }    
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(heavyAttackPoint.position, heavyAttackRange);
     }
 }

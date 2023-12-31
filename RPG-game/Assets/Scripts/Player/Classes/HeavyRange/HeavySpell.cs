@@ -4,12 +4,25 @@ using UnityEngine;
 
 public class HeavySpell : MonoBehaviour
 {
+    public HeavyRange parent;
+    public float range=1;
+
     void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.tag != "Player") 
         {
             ShakeCamera.shake = true;
+            foreach(Collider col in Physics.OverlapSphere(transform.position, range))
+            {
+                if(col.gameObject.GetComponent<EnemyHealth>()) col.gameObject.GetComponent<EnemyHealth>().TakeDamage(parent.damage);
+            }
             Destroy(this.gameObject);
         }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 }
