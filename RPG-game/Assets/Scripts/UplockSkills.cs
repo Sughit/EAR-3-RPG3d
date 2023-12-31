@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class UplockSkills : MonoBehaviour
 {
-    public Button nextSkill;
-    public GameObject inactive;
+    public Button[] nextSkills;
+    public GameObject[] inactives;
     bool canUnlockCurrentSkill=true;
     public Image usedBtnImage;
 
@@ -14,10 +14,16 @@ public class UplockSkills : MonoBehaviour
     {
         if(canUnlockCurrentSkill)
         {
-            if(nextSkill != null) 
+            if(nextSkills.Length > 0) 
             {
-                nextSkill.gameObject.SetActive(true);
-                inactive.SetActive(false);
+                foreach(var nextSkill in nextSkills)
+                {
+                    nextSkill.gameObject.SetActive(true);
+                }
+                foreach(var inactive in inactives)
+                {
+                    inactive.SetActive(false);
+                }
             }
             usedBtnImage.gameObject.SetActive(true);
             Debug.Log("Skill unlocked");
