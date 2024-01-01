@@ -12,7 +12,9 @@ public class Movement : MonoBehaviour
     public GameObject player;
     public bool isCameraRotating = false; 
     public float angle =1f;
-    Vector3 input;
+    Vector3 input, moveDir;
+    float vInput, hInput;
+
     
     void Start()
     {
@@ -41,19 +43,31 @@ public class Movement : MonoBehaviour
     private void GetInput() 
     {
         input = new Vector3 (Input.GetAxisRaw("Horizontal"),0 ,Input.GetAxisRaw("Vertical"));
+        float vInput = Input.GetAxisRaw("Vertical");
+        float hInput = Input.GetAxisRaw("Horizontal");
+
+        Vector3 camForward = cam.transform.forward;
+        Vector3 camRight = cam.transform.right;
+
+        Vector3 forwardRel = vInput * camForward;
+        Vector3 rightRel = hInput * camRight;
+
+        moveDir = forwardRel + rightRel;
+
+
 
     }
 
     private void Look() 
     {
         if (input ==Vector3.zero) return;
-        var rot = Quaternion.LookRotation(input.ToIso(), Vector3.up);
+        var rot = Quaternion.LookRotation(moveDir.ToIso(), Vector3.up);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, rotSpeed * Time.deltaTime);
     }
 
     private void Move() 
     {
-            rb.MovePosition(transform.position + transform.forward * input.normalized.magnitude * speed * Time.deltaTime);
+           rb.MovePosition(transform.position + transform.forward * input.normalized.magnitude * speed * Time.deltaTime);
 
     }
 
@@ -71,7 +85,7 @@ public class Movement : MonoBehaviour
 
     IEnumerator RotationPlus()
     {
-        for(int i =0;i<90;i++)
+        for(int i =0;i<45;i++)
         {
             angle= 1.0f;
             yield return new WaitForSeconds(0.001f);
@@ -80,7 +94,7 @@ public class Movement : MonoBehaviour
     }
     IEnumerator RotationMinus()
     {
-        for(int i=0;i<90;i++)
+        for(int i=0;i<45;i++)
         {
             angle= 1.0f;
             yield return new WaitForSeconds(0.001f);
