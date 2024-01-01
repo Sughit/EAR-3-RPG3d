@@ -102,7 +102,8 @@ MonoBehaviour:
   rotSpeed: 360
   cam: {fileID: 0}
   player: {fileID: 0}
-  moveDir: {x: 0, y: 0, z: 0}
+  isCameraRotating: 0
+  angle: 1
 --- !u!114 &5600896593424659450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +137,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
+  grad:
+    serializedVersion: 2
+    key0: {r: 1, g: 0.008203249, b: 0, a: 1}
+    key1: {r: 1, g: 0.8593202, b: 0, a: 1}
+    key2: {r: 0.1393305, g: 1, b: 0, a: 1}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 21823
+    ctime1: 43646
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 21823
+    atime1: 43646
+    atime2: 65535
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 1
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 3
+  Images:
+  - {fileID: -1982601783, guid: efbb54d5a14b7064a950a402950795e3, type: 3}
+  - {fileID: -75255474, guid: efbb54d5a14b7064a950a402950795e3, type: 3}
+  - {fileID: 1423464633, guid: efbb54d5a14b7064a950a402950795e3, type: 3}
 --- !u!1 &4959570170004515523
 GameObject:
   m_ObjectHideFlags: 0
