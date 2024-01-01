@@ -387,6 +387,6 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 3
   Images:
-  - {fileID: -1982601783, guid: efbb54d5a14b7064a950a402950795e3, type: 3}
-  - {fileID: -75255474, guid: efbb54d5a14b7064a950a402950795e3, type: 3}
-  - {fileID: 1423464633, guid: efbb54d5a14b7064a950a402950795e3, type: 3}
+  - {fileID: -1700179480, guid: 6c7d6e61dda33724b9c51757a222f9a2, type: 3}
+  - {fileID: 294501377, guid: 6c7d6e61dda33724b9c51757a222f9a2, type: 3}
+  - {fileID: 203857265, guid: 6c7d6e61dda33724b9c51757a222f9a2, type: 3}
