@@ -35,6 +35,7 @@ Transform:
   - {fileID: 4984955089438195002}
   - {fileID: 3145586507319197768}
   - {fileID: 8374171317002592426}
+  - {fileID: 71620710912188218}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
@@ -71,7 +72,8 @@ MonoBehaviour:
   rotSpeed: 360
   cam: {fileID: 0}
   player: {fileID: 0}
-  moveDir: {x: 0, y: 0, z: 0}
+  isCameraRotating: 0
+  angle: 1
 --- !u!114 &558016992131686189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,12 +88,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heavyDamage: 3
   timeToHeavyAttack: 3
-  heavyAttackPoint: {fileID: 0}
-  heavyAttackRange: 2
+  heavyAttackPoint: {fileID: 373149016464349562}
+  heavyAttackRange: 1.5
   damage: 2
   attackRate: 1
   canAttack: 1
-  attackPoint: {fileID: 0}
+  attackPoint: {fileID: 71620710912188218}
   attackRange: 0.7
   heavyAttackParticle: {fileID: 2046916192691440078}
 --- !u!114 &-43114426061938056
@@ -4920,6 +4922,37 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &4812239829730100598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 71620710912188218}
+  m_Layer: 8
+  m_Name: attackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &71620710912188218
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4812239829730100598}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.52}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 373149016464349562}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5067562775336143564
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField] int currentExp, maxExp, currentLevel, numSkillPoints;
+    [SerializeField] int currentExp, maxExp, currentLevel;
+    public static int numSkillPoints;
     public Slider slider;
     public Text expText;
     public Text levelText;
