@@ -154,9 +154,9 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 3
   Images:
-  - {fileID: -1700179480, guid: 6c7d6e61dda33724b9c51757a222f9a2, type: 3}
-  - {fileID: 294501377, guid: 6c7d6e61dda33724b9c51757a222f9a2, type: 3}
-  - {fileID: 203857265, guid: 6c7d6e61dda33724b9c51757a222f9a2, type: 3}
+  - {fileID: 21300000, guid: b841c972f22df6c47a36f15c90703da0, type: 3}
+  - {fileID: 21300000, guid: 0696554bfc4704142a6af8c2d4506c8a, type: 3}
+  - {fileID: 21300000, guid: 4b8b72254cac2c64cbef0fb73179099b, type: 3}
 --- !u!1 &2046916192691440078
 GameObject:
   m_ObjectHideFlags: 0
