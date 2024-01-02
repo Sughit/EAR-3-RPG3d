@@ -17,8 +17,9 @@ public class EnemyHealth : MonoBehaviour
         origionalColor = mRenderer.material.color;
     }
 
-    public void TakeDamage(float damageAmmount)
+    public void TakeDamage(float damageAmmount, GameObject hitFromGO)
     {
+        SetTarget(hitFromGO.transform);
         currentHealth -= damageAmmount;
         HitEffect();
         if(currentHealth <= 0) Die();
@@ -45,5 +46,20 @@ public class EnemyHealth : MonoBehaviour
     void ResetColor()
     {
         mRenderer.material.color = origionalColor;
+    }
+
+    void SetTarget(Transform target)
+    {
+        switch(this.gameObject.tag)
+        {
+            case "Wolf":
+            if(GetComponent<WolfPack>()) GetComponent<WolfPack>().walkPoint = target.position;
+            if(GetComponent<NormalWolf>()) GetComponent<NormalWolf>().walkPoint = target.position;
+            break;
+
+            default:
+            Debug.Log("Enemy not found");
+            break;
+        }
     }
 }

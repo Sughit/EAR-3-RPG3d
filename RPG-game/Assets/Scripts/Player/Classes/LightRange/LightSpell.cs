@@ -14,7 +14,7 @@ public class LightSpell : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.GetComponent<EnemyHealth>()) other.gameObject.GetComponent<EnemyHealth>().TakeDamage(parent.damage);
+        if(other.gameObject.GetComponent<EnemyHealth>()) other.gameObject.GetComponent<EnemyHealth>().TakeDamage(parent.damage, parent.gameObject);
         Destroy(this.gameObject);
     }
 }

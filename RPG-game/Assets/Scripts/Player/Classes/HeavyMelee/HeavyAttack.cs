@@ -110,7 +110,7 @@ public class HeavyAttack : MonoBehaviour
             Debug.Log("Attack");
             foreach(Collider other in Physics.OverlapSphere(attackPoint.position, attackRange))
             {
-                if(other.gameObject.GetComponent<EnemyHealth>()) other.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+                if(other.gameObject.GetComponent<EnemyHealth>()) other.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage, this.gameObject);
             }
         }
     }
@@ -128,7 +128,7 @@ public class HeavyAttack : MonoBehaviour
         heavyAttackParticle.SetActive(false);
         foreach(Collider other in Physics.OverlapSphere(heavyAttackPoint.position, heavyAttackRange))
         {
-            if(other.gameObject.GetComponent<EnemyHealth>()) other.gameObject.GetComponent<EnemyHealth>().TakeDamage(heavyDamage);
+            if(other.gameObject.GetComponent<EnemyHealth>()) other.gameObject.GetComponent<EnemyHealth>().TakeDamage(heavyDamage, this.gameObject);
         }
 
     }

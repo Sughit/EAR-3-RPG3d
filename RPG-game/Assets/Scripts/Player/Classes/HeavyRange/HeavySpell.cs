@@ -17,7 +17,7 @@ public class HeavySpell : MonoBehaviour
             {
                 if(col.gameObject.GetComponent<EnemyHealth>()) 
                 {
-                    col.gameObject.GetComponent<EnemyHealth>().TakeDamage(parent.damage);
+                    col.gameObject.GetComponent<EnemyHealth>().TakeDamage(parent.damage, parent.gameObject);
                     Debug.Log("Lovit");
                 }
             }

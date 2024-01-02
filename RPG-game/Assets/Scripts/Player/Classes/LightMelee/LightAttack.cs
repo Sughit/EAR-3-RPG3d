@@ -61,7 +61,7 @@ public class LightAttack : MonoBehaviour
             Debug.Log("Attack");
             foreach(Collider other in Physics.OverlapSphere(attackPoint.position, attackRange))
             {
-                if(other.gameObject.GetComponent<EnemyHealth>()) other.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+                if(other.gameObject.GetComponent<EnemyHealth>()) other.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage, this.gameObject);
             }
         }
     }

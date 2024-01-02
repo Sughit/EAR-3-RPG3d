@@ -66,8 +66,8 @@ public class WolfPack : MonoBehaviour
         }
         if(target != null)
         {
-            targetInSightRange = Physics.CheckSphere(alpha.transform.position, sightRange, whatIsTarget);
-            targetInAttackRange = Physics.CheckSphere(alpha.transform.position, attackRange, whatIsTarget);
+            targetInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsTarget);
+            targetInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsTarget);
 
             if(!targetInSightRange && !targetInAttackRange) Patroling();
             if(targetInSightRange && !targetInAttackRange) ChaseTarget();
@@ -130,7 +130,7 @@ public class WolfPack : MonoBehaviour
             attacked = true;
             Invoke(nameof(ResetAttack), attackRate);
             if(target.tag == "Player") target.GetComponent<PlayerHealth>().TakeDamage(damage);
-            if(target.tag == "Enemy") target.GetComponent<EnemyHealth>().TakeDamage(damage);
+            if(target.tag == "Enemy") target.GetComponent<EnemyHealth>().TakeDamage(damage, this.gameObject);
         }
     }
 
