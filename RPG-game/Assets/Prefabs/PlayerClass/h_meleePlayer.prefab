@@ -103,7 +103,7 @@ MonoBehaviour:
   heavyDamage: 3
   timeToHeavyAttack: 3
   heavyAttackPoint: {fileID: 373149016464349562}
-  heavyAttackRange: 1.5
+  heavyAttackRange: 2
   damage: 2
   attackRate: 1
   canAttack: 1

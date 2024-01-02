@@ -43,7 +43,7 @@ public class PlayerStats : MonoBehaviour
         currentLevel++;
         levelText.text = currentLevel.ToString();
 
-        currentExp = maxExp - currentExp;
+        currentExp = currentExp - maxExp;
         slider.value = currentExp;
         maxExp += 300;
         slider.maxValue = maxExp;

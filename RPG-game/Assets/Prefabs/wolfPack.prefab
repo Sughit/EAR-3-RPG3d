@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5543635302321804757}
   - component: {fileID: 698062088847155946}
   - component: {fileID: 5702717198758830431}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6172485244892775296}
   - component: {fileID: 6172485244892775301}
   - component: {fileID: 6172485244892775298}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 6172485245437826365}
   - component: {fileID: 6172485245437826366}
   - component: {fileID: 6172485245437826367}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,8 @@ GameObject:
   - component: {fileID: 6172485245910071511}
   - component: {fileID: 6172485245910071508}
   - component: {fileID: 6172485245910071509}
-  m_Layer: 11
+  - component: {fileID: 5899138729787359245}
+  m_Layer: 12
   m_Name: wolf
   m_TagString: Wolf
   m_Icon: {fileID: 0}
@@ -331,7 +332,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -400,6 +401,22 @@ MonoBehaviour:
   attackRange: 1.5
   targetInSightRange: 0
   targetInAttackRange: 0
+--- !u!114 &5899138729787359245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6172485245910071507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ca7bbd910edfc43a4207f871554a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  currentHealth: 0
+  expAmmount: 75
+  mRenderer: {fileID: 6172485244892775298}
 --- !u!1 &6172485246479307497
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +430,8 @@ GameObject:
   - component: {fileID: 6172485246479307501}
   - component: {fileID: 6172485246479307498}
   - component: {fileID: 6172485246479307499}
-  m_Layer: 11
+  - component: {fileID: 4068349924935183046}
+  m_Layer: 12
   m_Name: alphaWolf
   m_TagString: Wolf
   m_Icon: {fileID: 0}
@@ -447,7 +465,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -516,6 +534,22 @@ MonoBehaviour:
   attackRange: 1.5
   targetInSightRange: 0
   targetInAttackRange: 0
+--- !u!114 &4068349924935183046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6172485246479307497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ca7bbd910edfc43a4207f871554a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  currentHealth: 0
+  expAmmount: 150
+  mRenderer: {fileID: 6172485245437826367}
 --- !u!1 &7312314068916523443
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +563,8 @@ GameObject:
   - component: {fileID: 6080751081334654621}
   - component: {fileID: 5166931814517874}
   - component: {fileID: 4799486387683407632}
-  m_Layer: 11
+  - component: {fileID: 5710008897788984937}
+  m_Layer: 12
   m_Name: wolf (1)
   m_TagString: Wolf
   m_Icon: {fileID: 0}
@@ -563,7 +598,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -632,6 +667,22 @@ MonoBehaviour:
   attackRange: 1.5
   targetInSightRange: 0
   targetInAttackRange: 0
+--- !u!114 &5710008897788984937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7312314068916523443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ca7bbd910edfc43a4207f871554a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  currentHealth: 0
+  expAmmount: 75
+  mRenderer: {fileID: 5702717198758830431}
 --- !u!1 &8393061653999336331
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +694,7 @@ GameObject:
   - component: {fileID: 8475744248434671107}
   - component: {fileID: 7671187097024577443}
   - component: {fileID: 7602933434523042488}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -728,7 +779,8 @@ GameObject:
   - component: {fileID: 1426740569618227281}
   - component: {fileID: 1717329370800069412}
   - component: {fileID: 3547864955950598975}
-  m_Layer: 11
+  - component: {fileID: 325823145015336281}
+  m_Layer: 12
   m_Name: wolf (2)
   m_TagString: Wolf
   m_Icon: {fileID: 0}
@@ -762,7 +814,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -831,3 +883,19 @@ MonoBehaviour:
   attackRange: 1.5
   targetInSightRange: 0
   targetInAttackRange: 0
+--- !u!114 &325823145015336281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9196484997128795853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ca7bbd910edfc43a4207f871554a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  currentHealth: 0
+  expAmmount: 75
+  mRenderer: {fileID: 7602933434523042488}

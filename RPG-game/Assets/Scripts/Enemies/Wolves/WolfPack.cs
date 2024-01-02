@@ -54,6 +54,7 @@ public class WolfPack : MonoBehaviour
 
     void Update()
     {
+        if(alpha == null) Destroy(this.gameObject);
         target = alpha.GetComponent<WolfPack>().target;
         if(alpha.GetComponent<WolfPack>().targetInSightRange)
         {
@@ -82,6 +83,7 @@ public class WolfPack : MonoBehaviour
     void Patroling()
     {
         target = null;
+        agent.speed = 1.5f;
         if(!walkPointSet) SearchWalkPoint();
 
         if(walkPointSet) agent.SetDestination(walkPoint);
@@ -113,6 +115,7 @@ public class WolfPack : MonoBehaviour
 
     void ChaseTarget()
     {
+        agent.speed = 3.5f;
         agent.SetDestination(target.transform.position);
     }
 

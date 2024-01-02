@@ -15,7 +15,11 @@ public class HeavySpell : MonoBehaviour
             ShakeCamera.shake = true;
             foreach(Collider col in Physics.OverlapSphere(transform.position, range))
             {
-                if(col.gameObject.GetComponent<EnemyHealth>()) col.gameObject.GetComponent<EnemyHealth>().TakeDamage(parent.damage);
+                if(col.gameObject.GetComponent<EnemyHealth>()) 
+                {
+                    col.gameObject.GetComponent<EnemyHealth>().TakeDamage(parent.damage);
+                    Debug.Log("Lovit");
+                }
             }
             Instantiate(explosionParticle, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
