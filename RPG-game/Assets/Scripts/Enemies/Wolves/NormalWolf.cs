@@ -102,21 +102,28 @@ public class NormalWolf : MonoBehaviour
     void ChaseTarget()
     {
         agent.speed = 3.5f;
-        agent.SetDestination(target.transform.position);
+        if(target != null) agent.SetDestination(target.transform.position);
     }
 
     void Attack()
     {
-        agent.SetDestination(transform.position);
-
-        transform.LookAt(target.transform);
-
-        if(!attacked) 
+        try
         {
-            attacked = true;
-            Invoke(nameof(ResetAttack), attackRate);
-            if(target.tag == "Player") target.GetComponent<PlayerHealth>().TakeDamage(damage);
-            if(target.tag == "Enemy") target.GetComponent<EnemyHealth>().TakeDamage(damage, this.gameObject);
+            agent.SetDestination(transform.position);
+
+            transform.LookAt(target.transform);
+
+            if(!attacked) 
+            {
+                attacked = true;
+                Invoke(nameof(ResetAttack), attackRate);
+                if(target.GetComponent<PlayerHealth>()) target.GetComponent<PlayerHealth>().TakeDamage(damage);
+                if(target.GetComponent<EnemyHealth>()) target.GetComponent<EnemyHealth>().TakeDamage(damage, this.gameObject);
+            }
+        }
+        catch
+        {
+            Patroling();
         }
     }
 

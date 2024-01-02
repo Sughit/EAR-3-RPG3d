@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class WolfPack : MonoBehaviour
+public class Bear : MonoBehaviour
 {
-    public GameObject alpha;
-    public bool isAlpha;
-
     NavMeshAgent agent;
     public GameObject target;
     public LayerMask whatIsGround, whatIsTarget;
@@ -35,35 +32,24 @@ public class WolfPack : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
     }
 
-    void AlphaGetTarget()
+    void GetTarget()
     {
-        if(isAlpha)
+        List<Collider> targets = new List<Collider>();
+        foreach(Collider other in Physics.OverlapSphere(transform.position, sightRange))
         {
-            List<Collider> targets = new List<Collider>();
-            foreach(Collider other in Physics.OverlapSphere(transform.position, sightRange))
-            {
-                if(other.gameObject.tag != "Wolf" && other.gameObject.layer != groundLayerMaskInt) targets.Add(other);
-            }
-            if(targets.Count > 0)
-            {
-                target = targets[Random.Range(0, targets.Count)].gameObject;
-                isTarget = true;
-            }
+            if(other.gameObject.tag != "Bear" && other.gameObject.layer != groundLayerMaskInt) targets.Add(other);
+        }
+        if(targets.Count > 0)
+        {
+            target = targets[Random.Range(0, targets.Count)].gameObject;
+            isTarget = true;
         }
     }
 
     void Update()
     {
-        if(alpha == null) Destroy(this.gameObject);
-        if(alpha != null) target = alpha.GetComponent<WolfPack>().target;
-        if(alpha.GetComponent<WolfPack>().targetInSightRange)
-        {
-            ChaseTarget();
-        }
-        if(!isTarget)
-        {
-            AlphaGetTarget();
-        }
+        if(!isTarget) GetTarget();
+
         if(target != null)
         {
             targetInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsTarget);
@@ -91,15 +77,7 @@ public class WolfPack : MonoBehaviour
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         //Am ajuns la walkPoint
-        if(distanceToWalkPoint.magnitude < 1f) 
-        {   
-            Invoke("SetWalkPointSetFalse", 2f);
-        }
-    }
-
-    void SetWalkPointSetFalse()
-    {
-        walkPointSet=false;
+        if(distanceToWalkPoint.magnitude < 1f) walkPointSet=false;
     }
 
     void SearchWalkPoint()
@@ -107,7 +85,7 @@ public class WolfPack : MonoBehaviour
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomx = Random.Range(-walkPointRange, walkPointRange);
 
-        walkPoint = new Vector3(alpha.transform.position.x + randomx, transform.position.y, alpha.transform.position.z + randomZ);
+        walkPoint = new Vector3(transform.position.x + randomx, transform.position.y, transform.position.z + randomZ);
 
         if(Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
             walkPointSet = true;
@@ -115,29 +93,22 @@ public class WolfPack : MonoBehaviour
 
     void ChaseTarget()
     {
-        agent.speed = 3.5f;
-        if(target != null) agent.SetDestination(target.transform.position);
+        agent.speed = 4f;
+        agent.SetDestination(target.transform.position);
     }
 
     void Attack()
     {
-        try
-        {
-            agent.SetDestination(transform.position);
+        agent.SetDestination(transform.position);
 
-            transform.LookAt(target.transform);
+        transform.LookAt(target.transform);
 
-            if(!attacked) 
-            {
-                attacked = true;
-                Invoke(nameof(ResetAttack), attackRate);
-                if(target.GetComponent<PlayerHealth>()) target.GetComponent<PlayerHealth>().TakeDamage(damage);
-                if(target.GetComponent<EnemyHealth>()) target.GetComponent<EnemyHealth>().TakeDamage(damage, this.gameObject);
-            }
-        }
-        catch
+        if(!attacked) 
         {
-            Patroling();
+            attacked = true;
+            Invoke(nameof(ResetAttack), attackRate);
+            if(target.GetComponent<PlayerHealth>()) target.GetComponent<PlayerHealth>().TakeDamage(damage);
+            if(target.GetComponent<EnemyHealth>()) target.GetComponent<EnemyHealth>().TakeDamage(damage, this.gameObject);
         }
     }
 

@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour
 
     Color origionalColor;
     public MeshRenderer mRenderer;
+    GameObject hitFrom;
 
     void Awake()
     {
@@ -19,6 +20,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(float damageAmmount, GameObject hitFromGO)
     {
+        hitFrom = hitFromGO;
         SetTarget(hitFromGO.transform);
         currentHealth -= damageAmmount;
         HitEffect();
@@ -33,7 +35,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-        ExpManager.instance.AddExp(expAmmount);
+        if(hitFrom.tag == "Player") ExpManager.instance.AddExp(expAmmount);
         Destroy(this.gameObject);
     }
 
@@ -55,6 +57,10 @@ public class EnemyHealth : MonoBehaviour
             case "Wolf":
             if(GetComponent<WolfPack>()) GetComponent<WolfPack>().walkPoint = target.position;
             if(GetComponent<NormalWolf>()) GetComponent<NormalWolf>().walkPoint = target.position;
+            break;
+
+            case "Bear":
+            GetComponent<Bear>().walkPoint = target.position;
             break;
 
             default:
