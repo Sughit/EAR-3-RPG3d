@@ -7,13 +7,13 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float speed = 5;
-    [SerializeField] private float rotSpeed = 360;
+    [SerializeField] private float rotSpeed = 720;
     public GameObject cam;
-    public GameObject player;
     public bool isCameraRotating = false; 
     public float angle =1f;
     Vector3 input, moveDir;
     float vInput, hInput;
+    public Animator anim;
 
     
     void Start()
@@ -56,11 +56,33 @@ public class Movement : MonoBehaviour
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
     private void Look() 
     {
-        if (input ==Vector3.zero) return;
+        if (input ==Vector3.zero) 
+        {
+            anim.SetBool("mers", false);
+            return;
+        }
+        else
+        {
+            anim.SetBool("mers", true);
+        }
         var rot = Quaternion.LookRotation(moveDir.ToIso(), Vector3.up);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, rotSpeed * Time.deltaTime);
     }
@@ -68,7 +90,6 @@ public class Movement : MonoBehaviour
     private void Move() 
     {
            rb.MovePosition(transform.position + transform.forward * input.normalized.magnitude * speed * Time.deltaTime);
-
     }
 
     public void CameraRotate()
