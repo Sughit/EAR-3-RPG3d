@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 6965423964112868924}
   - component: {fileID: 5600896593424659450}
   - component: {fileID: 5153101691862969663}
+  - component: {fileID: -3586588865499450843}
   m_Layer: 8
   m_Name: h_rangePlayer
   m_TagString: Player
@@ -184,6 +185,20 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b841c972f22df6c47a36f15c90703da0, type: 3}
   - {fileID: 21300000, guid: 0696554bfc4704142a6af8c2d4506c8a, type: 3}
   - {fileID: 21300000, guid: 4b8b72254cac2c64cbef0fb73179099b, type: 3}
+--- !u!114 &-3586588865499450843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2966842813167809075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 995a638707154a14986decb4264b905f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryUI: {fileID: 0}
+  inventorySize: 10
 --- !u!1 &4959570170004515523
 GameObject:
   m_ObjectHideFlags: 0

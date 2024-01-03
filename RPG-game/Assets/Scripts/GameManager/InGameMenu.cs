@@ -28,7 +28,7 @@ public class InGameMenu : MonoBehaviour
         {
             inGameMenuGO.SetActive(true);
             //nu stiu cum o sa facem daca vrem sa fie co-op la un moment dat
-            Time.timeScale=0;
+            //Time.timeScale=0;
         }
     }
 
