@@ -38,9 +38,9 @@ public class MouseFollower : MonoBehaviour
         transform.position = canvas.transform.TransformPoint(position);
     }
 
-    public void Toggle(bool value)
+    public void Toggle(bool val)
     {
-        Debug.Log($"Item toggled {value}");
-        gameObject.SetActive(value);
+        Debug.Log($"Item toggled {val}");
+        gameObject.SetActive(val);
     }
 }

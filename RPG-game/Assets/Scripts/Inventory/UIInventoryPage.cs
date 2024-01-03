@@ -27,10 +27,9 @@ namespace Inventory.UI
         public event Action<int> OnDescriptionRequested, OnItemActionRequested, OnStartDragging;
         public event Action<int, int> OnSwapItems;
 
-        
-
         void Awake()
         {
+            mouseFollower.Toggle(false);
             ResetSelection();
             ResetDraggedItem();
         }
@@ -48,6 +47,15 @@ namespace Inventory.UI
                 uiItem.OnItemDroppedOn += HandleSwap;
                 uiItem.OnItemEndDrag += HandleEndDrag;
                 uiItem.OnRightMouseBtnClick += HandleShowItemActions;
+            }
+        }
+
+        internal void ResetAllItems()
+        {
+            foreach(var item in listOfUIItems)
+            {
+                item.ResetData();
+                item.Deselect();
             }
         }
 
@@ -84,7 +92,7 @@ namespace Inventory.UI
 
         public void CreateDraggedItem(Sprite sprite, int quantity)
         {
-            mouseFollower.Toggle(false);
+            mouseFollower.Toggle(true);
             mouseFollower.SetData(sprite, quantity);
         }
 
@@ -96,6 +104,7 @@ namespace Inventory.UI
                 return;
             }
             OnSwapItems?.Invoke(currentlyDraggedItemIndex, index);
+            HandleItemSelection(inventoryItemUI);
         }
 
         void HandleEndDrag(UIInventoryItem inventoryItemUI)

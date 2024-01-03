@@ -408,3 +408,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 0}
   inventoryData: {fileID: 11400000, guid: 5b3f5efa30e50e04e81596a056464587, type: 2}
+  initialItems:
+  - quantity: 1
+    item: {fileID: 11400000, guid: 1bd0e67be10d05d4d9043187759c3381, type: 2}
+  - quantity: 0
+    item: {fileID: 0}
+  - quantity: 10
+    item: {fileID: 11400000, guid: 989ef1c8efd42a847bf5e749240c60de, type: 2}
