@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Inventory.UI;
 
-public class GivePlayerScipts : MonoBehaviour
+public class GivePlayerScripts : MonoBehaviour
 {
     public UIInventoryPage uiInventoryPage;
 }
