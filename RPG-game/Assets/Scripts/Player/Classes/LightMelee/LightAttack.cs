@@ -35,6 +35,7 @@ public class LightAttack : MonoBehaviour
         {
             Debug.Log("Dash");
             StartCoroutine(Dash());
+            anim.SetTrigger("roll");
         }
 
         if(Input.GetMouseButtonDown(0) && canAttack)

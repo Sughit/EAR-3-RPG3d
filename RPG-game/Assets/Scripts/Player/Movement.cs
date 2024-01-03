@@ -7,10 +7,10 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float speed = 5;
-    [SerializeField] private float rotSpeed = 720;
+    [SerializeField] private float rotSpeed = 360;
     public GameObject cam;
     public bool isCameraRotating = false; 
-    public float angle =1f;
+    float angle =1f;
     Vector3 input, moveDir;
     float vInput, hInput;
     public Animator anim;
