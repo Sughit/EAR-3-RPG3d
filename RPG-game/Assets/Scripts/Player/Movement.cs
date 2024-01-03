@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     Vector3 input, moveDir;
     float vInput, hInput;
     public Animator anim;
+    public static bool canMove;
 
     
     void Start()

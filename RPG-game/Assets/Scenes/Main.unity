@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18016,6 +18016,7 @@ GameObject:
   - component: {fileID: 975510895}
   - component: {fileID: 975510897}
   - component: {fileID: 975510896}
+  - component: {fileID: 975510898}
   m_Layer: 5
   m_Name: icon
   m_TagString: Untagged
@@ -18056,7 +18057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7647059, g: 0.54509807, b: 0.70980394, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -18081,6 +18082,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975510894}
   m_CullTransparentMesh: 1
+--- !u!114 &975510898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975510894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &984307063
 GameObject:
   m_ObjectHideFlags: 0
@@ -29706,7 +29722,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 300
   m_WholeNumbers: 1
-  m_Value: 300
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -31954,10 +31970,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   classMenu: {fileID: 896743109}
-  lightMelee: {fileID: 8883585577036370858, guid: 27ce1b4d54af5e8438087764bc761532, type: 3}
-  heavyMelee: {fileID: 640572268719216901, guid: 5ec1519d437fb4047a4809951fc74543, type: 3}
-  lightRange: {fileID: 6720359123898904207, guid: 5eaea1a48e2a04b4d9023b163b1b077c, type: 3}
-  heavyRange: {fileID: 2966842813167809075, guid: 970554ac279001f45b56ca5b4443c2a7, type: 3}
+  lightMelee: {fileID: 7242749346133532419, guid: b7a30e04d23c27749a29b9ed4360cd2f, type: 3}
+  heavyMelee: {fileID: 7242749346133532419, guid: 0023b214e175d444681d414481341474, type: 3}
+  lightRange: {fileID: 7242749346133532419, guid: 79ad0e65d5a80c34a90f099614483c24, type: 3}
+  heavyRange: {fileID: 7242749346133532419, guid: 6dea9aebc4a25fe40bdcefd03c844e35, type: 3}
   spawnPoint: {fileID: 499757017}
   anim: {fileID: 896743111}
   vcam: {fileID: 1678617277}
