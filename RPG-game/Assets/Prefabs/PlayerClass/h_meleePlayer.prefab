@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 558016992131686189}
   - component: {fileID: -43114426061938056}
   - component: {fileID: -3727144122817175466}
+  - component: {fileID: -1142246173139172906}
   m_Layer: 8
   m_Name: h_meleePlayer
   m_TagString: Player
@@ -179,6 +180,19 @@ MonoBehaviour:
     item: {fileID: 0}
   - quantity: 10
     item: {fileID: 11400000, guid: 989ef1c8efd42a847bf5e749240c60de, type: 2}
+--- !u!114 &-1142246173139172906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640572268719216901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0d443ca633c7949a12895af4313b1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryData: {fileID: 11400000, guid: 5b3f5efa30e50e04e81596a056464587, type: 2}
 --- !u!1 &2046916192691440078
 GameObject:
   m_ObjectHideFlags: 0
