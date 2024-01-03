@@ -63,6 +63,10 @@ public class EnemyHealth : MonoBehaviour
             GetComponent<Bear>().walkPoint = target.position;
             break;
 
+            case "Dwarf":
+            GetComponent<Dwarf>().agent.SetDestination(target.position);
+            break; 
+
             default:
             Debug.Log("Enemy not found");
             break;

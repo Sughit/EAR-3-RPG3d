@@ -5,16 +5,18 @@ using UnityEngine.AI;
 
 public class Dwarf : MonoBehaviour
 {
-    NavMeshAgent agent;
+    [HideInInspector]
+    public NavMeshAgent agent;
     public GameObject target;
     public LayerMask whatIsGround, whatIsTarget;
     int groundLayerMaskInt;
 
     //Patrulare
-    public Vector3 walkPoint;
-    bool walkPointSet;
+    public bool walkPointSet;
+    public bool anotherStone;
     public GameObject[] stones;
     public GameObject currentStone;
+    GameObject oldStone;
 
     //Atac
     public float attackRate;
@@ -76,18 +78,19 @@ public class Dwarf : MonoBehaviour
         target = null;
         if(!walkPointSet) 
         {
+            oldStone = currentStone;
             currentStone = stones[Random.Range(0, stones.Length)];
             agent.SetDestination(currentStone.transform.position);
             walkPointSet = true;
         }
 
-        Vector3 distanceToWalkPoint = transform.position - currentStone.transform.position;
-
-        //Am ajuns la walkPoint
-        if(distanceToWalkPoint.magnitude < 1f) 
-        {   
-            Invoke("SearchAnotherStone", 1f);
+        while(oldStone == currentStone)
+        {
+            currentStone = stones[Random.Range(0, stones.Length)];
         }
+
+        agent.SetDestination(currentStone.transform.position);
+        //pentru a reseta piatra, este scris in Rock
     }
 
     void SearchAnotherStone()
