@@ -1431,7 +1431,7 @@ GameObject:
   - component: {fileID: 2080602004491306322}
   m_Layer: 0
   m_Name: h_rangePlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
