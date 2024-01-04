@@ -18,7 +18,6 @@ public class LightAttack : MonoBehaviour
     [SerializeField]
     float currentAttackRate;
     public bool canAttack = true;
-    public bool inRangeOfUtilities = false;
     bool isAttacking;
 
     Animator anim;
@@ -30,13 +29,8 @@ public class LightAttack : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(inRangeOfUtilities);
         if(GameObject.Find("GameManager").GetComponent<InGameMenu>().inGameMenuGO.activeSelf) canAttack=false;
-        else if(!inRangeOfUtilities) canAttack=true;
-        
-        if(inRangeOfUtilities) canAttack=false;
-
-        //Inputs
+        else canAttack=true;
         if(Input.GetKey(KeyCode.Space) && canDash)
         {
             Debug.Log("Dash");

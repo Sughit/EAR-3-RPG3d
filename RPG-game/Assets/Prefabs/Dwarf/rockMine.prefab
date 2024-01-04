@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 960638770958961675}
   - component: {fileID: 960638770958961678}
   - component: {fileID: 960638770958961673}
+  - component: {fileID: 2059804900618985844}
   m_Layer: 0
   m_Name: rockMine
   m_TagString: Rock
@@ -129,7 +130,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 960638770517349593}
-  - {fileID: 4877416543106577872}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -174,67 +174,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.7
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &7820758112082258598
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4877416543106577872}
-  - component: {fileID: 7200452903033128519}
-  - component: {fileID: 2971914416697060191}
-  m_Layer: 0
-  m_Name: playerUse
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4877416543106577872
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7820758112082258598}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 960638770958961672}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &7200452903033128519
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7820758112082258598}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2971914416697060191
+--- !u!114 &2059804900618985844
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7820758112082258598}
+  m_GameObject: {fileID: 960638770958961717}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e8d49b644353944f801b46434a86331, type: 3}
+  m_Script: {fileID: 11500000, guid: d2e1627e8c8f2dd4c96bf252f89ffce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 5b3f5efa30e50e04e81596a056464587, type: 2}
-  simpleResource: {fileID: 11400000, guid: 86083d72576b397498e72e2825c55253, type: 2}
-  rareResource: {fileID: 11400000, guid: 0b91cc4c77383aa498b4f2f83ff05b74, type: 2}
-  range: 2.5
-  gameManager: {fileID: 0}
-  player: {fileID: 0}
+  rock: {fileID: 11400000, guid: 86083d72576b397498e72e2825c55253, type: 2}
+  gem: {fileID: 11400000, guid: 0b91cc4c77383aa498b4f2f83ff05b74, type: 2}
