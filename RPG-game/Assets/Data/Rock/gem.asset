@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c142353ebdc00046a1606493b396f1a, type: 3}
-  m_Name: gem
+  m_Name: Gem
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Gem
   <Description>k__BackingField: So this is also carbon ?!
-  <ItemImage>k__BackingField: {fileID: 21300000, guid: 7b612b5aec0590f42917137a32f7520f, type: 3}
+  <ItemImage>k__BackingField: {fileID: 21300000, guid: f9bd8d328dae6d54d81206d760b81b86, type: 3}
   <DefaultParametersList>k__BackingField: []
   modifiersData: []
   <actionSFX>k__BackingField: {fileID: 0}

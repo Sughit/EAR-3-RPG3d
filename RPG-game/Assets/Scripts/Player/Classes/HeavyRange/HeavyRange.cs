@@ -9,6 +9,7 @@ public class HeavyRange : MonoBehaviour
     [SerializeField]
     float currentAttackRate;
     public bool canAttack=true;
+    public bool inRangeOfUtilities = false;
     bool isAttacking;
     [Header("Projectile")]
     public GameObject spellProjectile;
@@ -18,7 +19,11 @@ public class HeavyRange : MonoBehaviour
     void Update()
     {
         if(GameObject.Find("GameManager").GetComponent<InGameMenu>().inGameMenuGO.activeSelf) canAttack=false;
-        else canAttack=true;
+        else if(!inRangeOfUtilities) canAttack=true;
+
+        if(inRangeOfUtilities) canAttack=false;
+
+        //Inputs
         if(Input.GetMouseButtonDown(0) && canAttack)
         {
             Attack();

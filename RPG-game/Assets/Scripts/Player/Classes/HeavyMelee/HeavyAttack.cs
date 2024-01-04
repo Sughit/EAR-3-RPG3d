@@ -16,6 +16,7 @@ public class HeavyAttack : MonoBehaviour
     public float attackRate = 1;
     float currentAttackRate;
     public bool canAttack = true;
+    public bool inRangeOfUtilities = false;
     public Transform attackPoint;
     public float attackRange=.7f;
     bool isAttacking;
@@ -36,7 +37,11 @@ public class HeavyAttack : MonoBehaviour
     void Update()
     {
         if(GameObject.Find("GameManager").GetComponent<InGameMenu>().inGameMenuGO.activeSelf) canAttack=false;
-        else canAttack=true;
+        else if(!inRangeOfUtilities) canAttack=true;
+
+        if(inRangeOfUtilities) canAttack=false;
+
+        //Inputs
         if(Input.GetMouseButtonDown(0) && canAttack)
         {
             Attack();
