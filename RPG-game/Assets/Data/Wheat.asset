@@ -16,7 +16,7 @@ MonoBehaviour:
   <MaxStackSize>k__BackingField: 32
   <Name>k__BackingField: Wheat
   <Description>k__BackingField: Can you actually eat it ?
-  <ItemImage>k__BackingField: {fileID: 21300000, guid: d5992fb1539bff3409b1ffa9cbfed371, type: 3}
+  <ItemImage>k__BackingField: {fileID: 21300000, guid: b8dac07f76407e64baf7caa358f97461, type: 3}
   <DefaultParametersList>k__BackingField: []
   modifiersData:
   - statModifier: {fileID: 11400000, guid: 06bc95e20ec096446b15b45cde8020bc, type: 2}
