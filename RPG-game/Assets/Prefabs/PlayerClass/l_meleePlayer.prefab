@@ -231,6 +231,7 @@ GameObject:
   - component: {fileID: 3153386809950478565}
   - component: {fileID: -991404082347550044}
   - component: {fileID: 4572132356154896176}
+  - component: {fileID: 1217887243091601737}
   m_Layer: 8
   m_Name: l_meleePlayer
   m_TagString: Player
@@ -322,9 +323,8 @@ MonoBehaviour:
   speed: 5
   rotSpeed: 360
   cam: {fileID: 0}
-  player: {fileID: 0}
   isCameraRotating: 0
-  angle: 1
+  anim: {fileID: 0}
 --- !u!114 &809266426084111697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,13 +409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 0}
   inventoryData: {fileID: 11400000, guid: 5b3f5efa30e50e04e81596a056464587, type: 2}
-  initialItems:
-  - quantity: 1
-    item: {fileID: 11400000, guid: 1bd0e67be10d05d4d9043187759c3381, type: 2}
-  - quantity: 0
-    item: {fileID: 0}
-  - quantity: 10
-    item: {fileID: 11400000, guid: 989ef1c8efd42a847bf5e749240c60de, type: 2}
+  initialItems: []
 --- !u!114 &4572132356154896176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,3 +423,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryData: {fileID: 11400000, guid: 5b3f5efa30e50e04e81596a056464587, type: 2}
+--- !u!114 &1217887243091601737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8883585577036370858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1a21712eb5444cb00857151981494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 0}
+  inventoryData: {fileID: 11400000, guid: 5b3f5efa30e50e04e81596a056464587, type: 2}
+  parametersToModify:
+  - itemParameter: {fileID: 11400000, guid: a05442ec31d919f4fbe3159749aadbf0, type: 2}
+    value: -10
+  itemCurrentState: []

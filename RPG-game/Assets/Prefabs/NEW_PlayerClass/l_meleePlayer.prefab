@@ -1428,6 +1428,7 @@ GameObject:
   - component: {fileID: 3170271625286541195}
   - component: {fileID: 8921252233473348377}
   - component: {fileID: 1779351277599722092}
+  - component: {fileID: -2154040802161868602}
   m_Layer: 0
   m_Name: l_meleePlayer
   m_TagString: Untagged
@@ -1677,6 +1678,26 @@ MonoBehaviour:
   inventoryUI: {fileID: 0}
   inventoryData: {fileID: 11400000, guid: 5b3f5efa30e50e04e81596a056464587, type: 2}
   initialItems: []
+  dropClip: {fileID: 0}
+  audioSource: {fileID: 0}
+--- !u!114 &-2154040802161868602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7242749346133532419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1a21712eb5444cb00857151981494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 0}
+  inventoryData: {fileID: 11400000, guid: 5b3f5efa30e50e04e81596a056464587, type: 2}
+  parametersToModify:
+  - itemParameter: {fileID: 11400000, guid: a05442ec31d919f4fbe3159749aadbf0, type: 2}
+    value: 0
+  itemCurrentState: []
 --- !u!1 &7277498787889495050
 GameObject:
   m_ObjectHideFlags: 0

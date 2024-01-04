@@ -48,7 +48,11 @@ public class PlayerHealth : MonoBehaviour
         slider.value = currentHealth;
         fill.color = grad.Evaluate(slider.normalizedValue);
 
-        if(currentHealth/maxHealth < 66.6/100 && currentHealth/maxHealth > 33.3/100)
+        if(currentHealth/maxHealth > 66.6)
+        {
+            heart.sprite = Images[0];
+        }
+        else if(currentHealth/maxHealth < 66.6/100 && currentHealth/maxHealth > 33.3/100)
         {
             heart.sprite = Images[1];
         }

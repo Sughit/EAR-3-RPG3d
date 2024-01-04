@@ -27,8 +27,12 @@ namespace Inventory.UI
         public event Action<int> OnDescriptionRequested, OnItemActionRequested, OnStartDragging;
         public event Action<int, int> OnSwapItems;
 
+        [SerializeField]
+        ItemActionPanel actionPanel;
+
         void Awake()
         {
+            actionPanel.Toggle(false);
             mouseFollower.Toggle(false);
             ResetSelection();
             ResetDraggedItem();
@@ -114,7 +118,12 @@ namespace Inventory.UI
 
         void HandleShowItemActions(UIInventoryItem inventoryItemUI)
         {
-            
+            int index = listOfUIItems.IndexOf(inventoryItemUI);
+            if(index == -1) 
+            {
+                return;
+            }
+            OnItemActionRequested?.Invoke(index);
         }
 
         void ResetDraggedItem()
@@ -129,12 +138,24 @@ namespace Inventory.UI
             DeselectAllItems();
         }
 
+        public void AddAction(string actionName, Action performAction)
+        {
+            actionPanel.AddButon(actionName, performAction);
+        }
+
+        public void ShowItemAction(int itemIndex)
+        {
+            actionPanel.Toggle(true);
+            actionPanel.transform.position = listOfUIItems[itemIndex].transform.position;
+        }
+
         void DeselectAllItems()
         {
             foreach(UIInventoryItem item in listOfUIItems)
             {
                 item.Deselect();
             }
+            actionPanel.Toggle(false);
         }
     }
 }
