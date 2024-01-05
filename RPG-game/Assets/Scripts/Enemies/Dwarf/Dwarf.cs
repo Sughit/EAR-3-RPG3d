@@ -9,7 +9,6 @@ public class Dwarf : MonoBehaviour
     public NavMeshAgent agent;
     public GameObject target;
     public LayerMask whatIsGround, whatIsTarget;
-    int groundLayerMaskInt;
 
     //Patrulare
     public bool walkPointSet;
@@ -31,16 +30,15 @@ public class Dwarf : MonoBehaviour
 
     void Awake()
     {
-        groundLayerMaskInt = LayerMask.NameToLayer("Ground");
         agent = GetComponent<NavMeshAgent>();
     }
 
     void GetTarget()
     {
         List<Collider> targets = new List<Collider>();
-        foreach(Collider other in Physics.OverlapSphere(transform.position, sightRange))
+        foreach(Collider other in Physics.OverlapSphere(transform.position, sightRange, whatIsTarget))
         {
-            if(other.gameObject.tag != "Dwarf" && other.gameObject.layer != groundLayerMaskInt && other.gameObject.tag != "Rock") targets.Add(other);
+            targets.Add(other);
         }
         if(targets.Count > 0)
         {

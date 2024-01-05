@@ -11,7 +11,6 @@ public class WolfPack : MonoBehaviour
     NavMeshAgent agent;
     public GameObject target;
     public LayerMask whatIsGround, whatIsTarget;
-    int groundLayerMaskInt;
 
     //Patrulare
     public Vector3 walkPoint;
@@ -31,7 +30,6 @@ public class WolfPack : MonoBehaviour
 
     void Awake()
     {
-        groundLayerMaskInt = LayerMask.NameToLayer("Ground");
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -42,7 +40,7 @@ public class WolfPack : MonoBehaviour
             List<Collider> targets = new List<Collider>();
             foreach(Collider other in Physics.OverlapSphere(transform.position, sightRange, whatIsTarget))
             {
-                if(other.gameObject.tag != "Wolf" && other.gameObject.layer != groundLayerMaskInt) targets.Add(other);
+                targets.Add(other);
             }
             if(targets.Count > 0)
             {
