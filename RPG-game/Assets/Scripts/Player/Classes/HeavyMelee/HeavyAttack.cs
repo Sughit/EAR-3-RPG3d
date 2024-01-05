@@ -19,6 +19,7 @@ public class HeavyAttack : MonoBehaviour
     public Transform attackPoint;
     public float attackRange=.7f;
     bool isAttacking;
+    public bool inRangeOfUtilities = false;
     [Header("Particles for Heavy Attack")]
     public static bool heavy;
     public GameObject heavyAttackParticle;
@@ -36,7 +37,11 @@ public class HeavyAttack : MonoBehaviour
     void Update()
     {
         if(GameObject.Find("GameManager").GetComponent<InGameMenu>().inGameMenuGO.activeSelf) canAttack=false;
-        else canAttack=true;
+        else if(!inRangeOfUtilities) canAttack=true;
+
+        if(inRangeOfUtilities) canAttack=false;
+
+        //Inputs
         if(Input.GetMouseButtonDown(0) && canAttack)
         {
             Attack();

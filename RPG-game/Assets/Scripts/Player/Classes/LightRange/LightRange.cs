@@ -10,6 +10,7 @@ public class LightRange : MonoBehaviour
     float currentAttackRate;
     public bool canAttack=true;
     bool isAttacking;
+    public bool inRangeOfUtilities = false;
     [Header("Projectile")]
     public GameObject spellProjectile;
     public Transform spawnPoint;
@@ -18,7 +19,11 @@ public class LightRange : MonoBehaviour
     void Update()
     {
         if(GameObject.Find("GameManager").GetComponent<InGameMenu>().inGameMenuGO.activeSelf) canAttack=false;
-        else canAttack=true;
+        else if(!inRangeOfUtilities) canAttack=true;
+
+        if(inRangeOfUtilities) canAttack=false;
+
+        //Inputs
         if(Input.GetMouseButtonDown(0) && canAttack)
         {
             Attack();
