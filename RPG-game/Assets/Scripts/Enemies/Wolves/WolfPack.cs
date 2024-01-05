@@ -40,7 +40,7 @@ public class WolfPack : MonoBehaviour
         if(isAlpha)
         {
             List<Collider> targets = new List<Collider>();
-            foreach(Collider other in Physics.OverlapSphere(transform.position, sightRange))
+            foreach(Collider other in Physics.OverlapSphere(transform.position, sightRange, whatIsTarget))
             {
                 if(other.gameObject.tag != "Wolf" && other.gameObject.layer != groundLayerMaskInt) targets.Add(other);
             }
