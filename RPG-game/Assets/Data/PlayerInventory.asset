@@ -13,24 +13,44 @@ MonoBehaviour:
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
   inventoryItems:
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
+  - quantity: 0
+    item: {fileID: 0}
+    itemState: []
   - quantity: 1
     item: {fileID: 11400000, guid: 1bd0e67be10d05d4d9043187759c3381, type: 2}
+    itemState:
+    - itemParameter: {fileID: 11400000, guid: a05442ec31d919f4fbe3159749aadbf0, type: 2}
+      value: 100
   - quantity: 0
     item: {fileID: 0}
-  - quantity: 10
-    item: {fileID: 11400000, guid: 989ef1c8efd42a847bf5e749240c60de, type: 2}
+    itemState: []
+  - quantity: 1
+    item: {fileID: 11400000, guid: 1bd0e67be10d05d4d9043187759c3381, type: 2}
+    itemState:
+    - itemParameter: {fileID: 11400000, guid: a05442ec31d919f4fbe3159749aadbf0, type: 2}
+      value: 100
   - quantity: 0
     item: {fileID: 0}
+    itemState: []
   - quantity: 0
     item: {fileID: 0}
+    itemState: []
   - quantity: 0
     item: {fileID: 0}
+    itemState: []
+  - quantity: 5
+    item: {fileID: 11400000, guid: 251e43afc6359b949a5cd0cea66e7638, type: 2}
+    itemState: []
   - quantity: 0
     item: {fileID: 0}
+    itemState: []
   - quantity: 0
     item: {fileID: 0}
+    itemState: []
   - quantity: 0
     item: {fileID: 0}
-  - quantity: 0
-    item: {fileID: 0}
-  <Size>k__BackingField: 10
+    itemState: []
+  <Size>k__BackingField: 12
