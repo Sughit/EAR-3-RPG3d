@@ -77,7 +77,7 @@ namespace Inventory.Model
                     continue;
                 if(inventoryItems[i].item.ID == item.ID)
                 {
-                    int amountPossibleToTake = inventoryItems[i].item.MaxStackSize = inventoryItems[i].quantity;
+                    int amountPossibleToTake = inventoryItems[i].item.MaxStackSize - inventoryItems[i].quantity;
 
                     if(quantity > amountPossibleToTake)
                     {

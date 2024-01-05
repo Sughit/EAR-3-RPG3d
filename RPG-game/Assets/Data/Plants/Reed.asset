@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c142353ebdc00046a1606493b396f1a, type: 3}
-  m_Name: Rock
+  m_Name: Reed
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 16
-  <Name>k__BackingField: Rock
-  <Description>k__BackingField: Nothing special, don't you think ?
-  <ItemImage>k__BackingField: {fileID: 21300000, guid: db063955042a8414fb2d5393b25b2eec, type: 3}
+  <Name>k__BackingField: Reed
+  <Description>k__BackingField: Do you know how long is this piece ?
+  <ItemImage>k__BackingField: {fileID: 21300000, guid: e812a9d0815c135469c3425fec87bac1, type: 3}
   <DefaultParametersList>k__BackingField: []
   modifiersData: []
   <actionSFX>k__BackingField: {fileID: 0}

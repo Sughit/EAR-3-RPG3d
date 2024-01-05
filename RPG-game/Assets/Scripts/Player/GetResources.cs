@@ -6,8 +6,8 @@ using Inventory.Model;
 public class GetResources : MonoBehaviour
 {
     public InventorySO inventory;
-    public SimpleItemSO simpleResource;
-    public SimpleItemSO rareResource;
+    public ItemSO simpleResource;
+    public ItemSO rareResource;
 
     public float range = 2.5f;
 
