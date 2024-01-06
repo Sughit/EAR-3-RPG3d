@@ -94,13 +94,7 @@ public class Movement : MonoBehaviour
         {
             angle= 1.0f;
             yield return new WaitForSeconds(0.001f);
-            if(vInput!=0)
-                {
-                    this.transform.Rotate(0,angle,0,Space.World);
-                    cam.transform.Rotate(0,angle,0,Space.World);
-                }
-            else
-                    cam.transform.Rotate(0,angle,0,Space.World);
+            cam.transform.Rotate(0,angle,0,Space.World);
 
         }     
     }
@@ -110,13 +104,7 @@ public class Movement : MonoBehaviour
         {
             angle= 1.0f;
             yield return new WaitForSeconds(0.001f);
-            if(vInput!=0)
-                {
-                    this.transform.Rotate(0,-angle,0,Space.World);
-                    cam.transform.Rotate(0,-angle,0,Space.World);
-                }
-            else
-                    cam.transform.Rotate(0,-angle,0,Space.World);
+            cam.transform.Rotate(0,-angle,0,Space.World);
         }     
     }
 
