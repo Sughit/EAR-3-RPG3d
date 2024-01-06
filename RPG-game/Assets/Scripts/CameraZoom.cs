@@ -7,6 +7,7 @@ public class CameraZoom : MonoBehaviour
     CinemachineComponentBase componentBase;
     float cameraDistance;
     float sensitivity = 3f;
+    public static bool canRotCam = true;
 
     void Update()
     {
@@ -20,14 +21,14 @@ public class CameraZoom : MonoBehaviour
             
         }
 
-        if(virtualCamera.m_Lens.OrthographicSize >= 4 && Input.GetAxis("Mouse ScrollWheel") >0)
+        if(virtualCamera.m_Lens.OrthographicSize >= 4 && Input.GetAxis("Mouse ScrollWheel") >0 && canRotCam)
         {
             cameraDistance = Input.GetAxis("Mouse ScrollWheel") * sensitivity;
 
             virtualCamera.m_Lens.OrthographicSize -= cameraDistance;
         }
         else
-        if(virtualCamera.m_Lens.OrthographicSize <= 11 && Input.GetAxis("Mouse ScrollWheel") <0)
+        if(virtualCamera.m_Lens.OrthographicSize <= 11 && Input.GetAxis("Mouse ScrollWheel") <0 && canRotCam)
         {
             cameraDistance = Input.GetAxis("Mouse ScrollWheel") * sensitivity;
 
