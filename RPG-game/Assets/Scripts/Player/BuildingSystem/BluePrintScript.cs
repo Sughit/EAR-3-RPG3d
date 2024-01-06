@@ -8,6 +8,17 @@ public class BluePrintScript : MonoBehaviour
     Vector3 movePoint;
     Quaternion rot;
     public GameObject prefab;
+    public bool canPlace = true;
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.layer < 32 && other.gameObject.layer != 7) canPlace =false;
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.layer < 32 && other.gameObject.layer != 7) canPlace =true;
+    }
 
     void Start()
     {
@@ -39,7 +50,7 @@ public class BluePrintScript : MonoBehaviour
         }
         transform.rotation = rot;
         
-        if(Input.GetMouseButton(1))
+        if(Input.GetMouseButton(1) && canPlace)
         {
             Instantiate(prefab, transform.position, transform.rotation);
             Destroy(gameObject);

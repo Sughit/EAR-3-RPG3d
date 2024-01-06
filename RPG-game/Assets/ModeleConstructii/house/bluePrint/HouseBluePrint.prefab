@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7307974670611967071}
   - component: {fileID: 979683036264240956}
+  - component: {fileID: 7757575781048327031}
   m_Layer: 0
   m_Name: HouseBluePrint
   m_TagString: Untagged
@@ -71,6 +72,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 567104378249240565, guid: e8261a97a7f761c4e8efce96a79a4a28, type: 3}
+  canPlace: 1
+--- !u!65 &7757575781048327031
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7307974670611967070}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.5, y: 3.92, z: 5.18}
+  m_Center: {x: 0, y: 1.95, z: 0}
 --- !u!1001 &137031289900219927
 PrefabInstance:
   m_ObjectHideFlags: 0
