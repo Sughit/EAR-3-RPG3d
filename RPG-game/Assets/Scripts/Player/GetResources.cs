@@ -39,6 +39,14 @@ public class GetResources : MonoBehaviour
         }
     }
 
+    void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.tag == "BluePrint")
+        {
+            other.gameObject.GetComponent<BluePrintScript>().canPlace = false;
+        }
+    }
+
     void OnTriggerExit(Collider other)
     {
         if(other.gameObject.tag == "Player")
@@ -61,6 +69,10 @@ public class GetResources : MonoBehaviour
                 Debug.Log("The class does not exist");
                 break;
             }
+        }
+        if(other.gameObject.tag == "BluePrint")
+        {
+            other.gameObject.GetComponent<BluePrintScript>().canPlace = true;
         }
     }
 

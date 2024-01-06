@@ -8,6 +8,7 @@ TagManager:
   - Bear
   - Dwarf
   - Rock
+  - BluePrint
   layers:
   - Default
   - TransparentFX

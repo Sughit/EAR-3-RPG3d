@@ -1422,13 +1422,13 @@ GameObject:
   - component: {fileID: 1194392888}
   - component: {fileID: 1194392896}
   - component: {fileID: 5384266203504376234}
-  - component: {fileID: 3331445181415145322}
   - component: {fileID: 5384266203504376277}
   - component: {fileID: 1071788975185142087}
   - component: {fileID: 3170271625286541195}
   - component: {fileID: 8921252233473348377}
   - component: {fileID: 1779351277599722092}
   - component: {fileID: -2154040802161868602}
+  - component: {fileID: 4186847148707064638}
   m_Layer: 8
   m_Name: l_meleePlayer
   m_TagString: Player
@@ -1557,19 +1557,6 @@ MonoBehaviour:
   currentAttackRate: 0
   canAttack: 1
   inRangeOfUtilities: 0
---- !u!65 &3331445181415145322
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7242749346133532419}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4, y: 3.753351, z: 4}
-  m_Center: {x: 0, y: 2.0898442, z: 0}
 --- !u!114 &5384266203504376277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1699,6 +1686,20 @@ MonoBehaviour:
   - itemParameter: {fileID: 11400000, guid: a05442ec31d919f4fbe3159749aadbf0, type: 2}
     value: 0
   itemCurrentState: []
+--- !u!136 &4186847148707064638
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7242749346133532419}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.55
+  m_Height: 8.63
+  m_Direction: 1
+  m_Center: {x: 0, y: 4.57, z: 0}
 --- !u!1 &7277498787889495050
 GameObject:
   m_ObjectHideFlags: 0

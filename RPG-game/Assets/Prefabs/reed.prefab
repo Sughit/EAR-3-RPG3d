@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 3889262861162428319}
   - component: {fileID: 3889262861162428313}
   - component: {fileID: 3889262861162428312}
+  - component: {fileID: 7721817959661450552}
   m_Layer: 0
   m_Name: playerTake
   m_TagString: Untagged
@@ -147,6 +148,22 @@ MonoBehaviour:
   range: 2.5
   gameManager: {fileID: 0}
   player: {fileID: 0}
+--- !u!54 &7721817959661450552
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3889262861162428318}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3889262861514023124
 GameObject:
   m_ObjectHideFlags: 0
