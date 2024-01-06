@@ -54,23 +54,6 @@ public class Movement : MonoBehaviour
         Vector3 rightRel = hInput * camRight;
 
         moveDir = forwardRel + rightRel;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
     private void Look() 
@@ -111,7 +94,14 @@ public class Movement : MonoBehaviour
         {
             angle= 1.0f;
             yield return new WaitForSeconds(0.001f);
-            cam.transform.Rotate(0,angle,0,Space.World);
+            if(vInput!=0)
+                {
+                    this.transform.Rotate(0,angle,0,Space.World);
+                    cam.transform.Rotate(0,angle,0,Space.World);
+                }
+            else
+                    cam.transform.Rotate(0,angle,0,Space.World);
+
         }     
     }
     IEnumerator RotationMinus()
@@ -120,7 +110,13 @@ public class Movement : MonoBehaviour
         {
             angle= 1.0f;
             yield return new WaitForSeconds(0.001f);
-            cam.transform.Rotate(0,-angle,0,Space.World);
+            if(vInput!=0)
+                {
+                    this.transform.Rotate(0,-angle,0,Space.World);
+                    cam.transform.Rotate(0,-angle,0,Space.World);
+                }
+            else
+                    cam.transform.Rotate(0,-angle,0,Space.World);
         }     
     }
 
