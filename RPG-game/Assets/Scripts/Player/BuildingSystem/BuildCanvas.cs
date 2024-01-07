@@ -4,10 +4,28 @@ using UnityEngine;
 
 public class BuildCanvas : MonoBehaviour
 {
-    public GameObject buildTest;
+    public GameObject houseBP;
+    public GameObject watchTowerBP;
+    public GameObject fenceBP;
+    public GameObject torchBP;
 
-    public void SpawnBuildTest()
+    public void SpawnHouse()
     {
-        Instantiate(buildTest);
+        Instantiate(houseBP);
+    }
+
+    public void SpawnWatchTower()
+    {
+        Instantiate(watchTowerBP);
+    }
+
+    public void SpawnFence()
+    {
+        Instantiate(fenceBP);
+    }
+
+    public void SpawnTorch()
+    {
+        Instantiate(torchBP);
     }
 }

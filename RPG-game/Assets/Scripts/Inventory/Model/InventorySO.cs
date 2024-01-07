@@ -11,7 +11,7 @@ namespace Inventory.Model
     public class InventorySO : ScriptableObject
     {
         [SerializeField]
-        List<InventoryItem> inventoryItems;
+        public List<InventoryItem> inventoryItems;
 
         [field: SerializeField]
         public int Size { get; private set; } = 10;
@@ -69,7 +69,7 @@ namespace Inventory.Model
         bool IsInventoryFull()
             => inventoryItems.Where(item => item.IsEmpty).Any() == false;
 
-        int AddStackableItem(ItemSO item, int quantity)
+        public int AddStackableItem(ItemSO item, int quantity)
         {
             for(int i = 0; i < inventoryItems.Count; i++)
             {

@@ -74,6 +74,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 567104378249240565, guid: e8261a97a7f761c4e8efce96a79a4a28, type: 3}
   canPlace: 1
+  inventory: {fileID: 11400000, guid: 5b3f5efa30e50e04e81596a056464587, type: 2}
+  item1: {fileID: 11400000, guid: 665778791cac6d54db9cb41d2861362c, type: 2}
+  quantity1: 10
+  item2: {fileID: 11400000, guid: 86083d72576b397498e72e2825c55253, type: 2}
+  quantity2: 8
+  item3: {fileID: 11400000, guid: 5ff75d9746ccb654fa5c6a30d559e94c, type: 2}
+  quantity3: 16
 --- !u!65 &7757575781048327031
 BoxCollider:
   m_ObjectHideFlags: 0
