@@ -18,6 +18,7 @@ public class Bear : MonoBehaviour
     public float attackRate;
     public float damage;
     float currentAttackRate;
+    public Transform attackPoint;
     bool attacked;
 
     //Stari
@@ -51,7 +52,7 @@ public class Bear : MonoBehaviour
         if(target != null)
         {
             targetInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsTarget);
-            targetInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsTarget);
+            targetInAttackRange = Physics.CheckSphere(attackPoint.position, attackRange, whatIsTarget);
 
             if(!targetInSightRange && !targetInAttackRange) Patroling();
             if(targetInSightRange && !targetInAttackRange) ChaseTarget();
@@ -118,7 +119,7 @@ public class Bear : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
