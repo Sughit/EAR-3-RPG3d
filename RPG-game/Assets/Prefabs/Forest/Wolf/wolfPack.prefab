@@ -1874,7 +1874,7 @@ MonoBehaviour:
   walkPointRange: 5
   attackRate: 2
   damage: 2
-  sightRange: 5
+  sightRange: 10
   attackRange: 1.5
   targetInSightRange: 0
   targetInAttackRange: 0
@@ -3509,7 +3509,7 @@ MonoBehaviour:
   walkPointRange: 5
   attackRate: 2
   damage: 2
-  sightRange: 5
+  sightRange: 10
   attackRange: 1.5
   targetInSightRange: 0
   targetInAttackRange: 0
@@ -3643,7 +3643,7 @@ MonoBehaviour:
   walkPointRange: 7
   attackRate: 2
   damage: 3
-  sightRange: 6
+  sightRange: 14
   attackRange: 1.5
   targetInSightRange: 0
   targetInAttackRange: 0
@@ -5240,7 +5240,7 @@ MonoBehaviour:
   walkPointRange: 5
   attackRate: 2
   damage: 2
-  sightRange: 5
+  sightRange: 10
   attackRange: 1.5
   targetInSightRange: 0
   targetInAttackRange: 0

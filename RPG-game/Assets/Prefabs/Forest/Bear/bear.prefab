@@ -227,7 +227,7 @@ MonoBehaviour:
   attackRate: 1
   damage: 3
   attackPoint: {fileID: 179799418173231549}
-  sightRange: 7.5
+  sightRange: 13
   attackRange: 1.5
   targetInSightRange: 0
   targetInAttackRange: 0
