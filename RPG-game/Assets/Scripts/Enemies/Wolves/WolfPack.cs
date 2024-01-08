@@ -53,7 +53,7 @@ public class WolfPack : MonoBehaviour
     void Update()
     {
         if(alpha == null) Destroy(this.gameObject);
-        if(alpha != null) target = alpha.GetComponent<WolfPack>().target;
+        target = alpha.GetComponent<WolfPack>().target;
         if(alpha.GetComponent<WolfPack>().targetInSightRange)
         {
             ChaseTarget();
@@ -67,9 +67,18 @@ public class WolfPack : MonoBehaviour
             targetInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsTarget);
             targetInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsTarget);
 
-            if(!targetInSightRange && !targetInAttackRange) Patroling();
-            if(targetInSightRange && !targetInAttackRange) ChaseTarget();
-            if(targetInSightRange && targetInAttackRange) Attack();
+            if(!isAlpha)
+            {
+                if(alpha.GetComponent<WolfPack>().target == null) Patroling();
+                if(alpha.GetComponent<WolfPack>().target != null) ChaseTarget();
+                if(targetInSightRange && targetInAttackRange) Attack();
+            }
+            else
+            {
+                if(!targetInSightRange && !targetInAttackRange) Patroling();
+                if(targetInSightRange && !targetInAttackRange) ChaseTarget();
+                if(targetInSightRange && targetInAttackRange) Attack();
+            }
         }
         else
         {
